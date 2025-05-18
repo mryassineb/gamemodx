@@ -116,12 +116,13 @@ main {
     background: var(--card-bg);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    padding: 1rem;
+    padding: 1rem 1rem 1.2rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: transform var(--transition), box-shadow var(--transition);
     opacity: 0.98;
+    min-height: 410px;
 }
 .game-card:hover {
     transform: translateY(-8px) scale(1.04);
@@ -145,17 +146,59 @@ body.dark .game-img {
     border-color: var(--accent2);
 }
 .game-title {
-    font-size: 1.13rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
+    font-size: 1.18rem;
+    font-weight: 700;
+    margin-bottom: 0.35rem;
     text-align: center;
 }
-.game-desc {
-    font-size: 0.97rem;
+.game-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em 0.7em;
+    justify-content: center;
+    margin-bottom: 0.7em;
+    font-size: 0.98em;
     color: var(--subtext);
-    text-align: center;
+}
+.game-meta span {
+    background: #eaf8fd;
+    color: #1e7ebc;
+    border-radius: 8px;
+    padding: 0.10em 0.6em;
+    font-weight: 500;
+    font-size: 0.97em;
+}
+body.dark .game-meta span {
+    background: #28495b;
+    color: #4fd1c5;
+}
+.game-desc {
+    font-size: 0.96rem;
+    color: var(--subtext);
+    text-align: left;
     margin-bottom: 1.1rem;
-    min-height: 42px;
+    min-height: 68px;
+    width: 100%;
+}
+.features-list {
+    text-align: left;
+    margin: 0.4em 0 0 0;
+    padding-left: 1em;
+    color: #222;
+    font-size: 0.97em;
+}
+body.dark .features-list {
+    color: #fff;
+}
+.features-list li {
+    margin-bottom: 0.18em;
+    list-style: none;
+}
+.features-list li:before {
+    content: "•";
+    color: var(--accent2);
+    margin-right: 0.5em;
+    font-weight: bold;
 }
 .download-btn {
     background: linear-gradient(90deg, var(--accent), var(--accent2));
@@ -170,6 +213,7 @@ body.dark .game-img {
     box-shadow: 0 2px 10px #4fd1c530;
     outline: none;
     animation: pulse 1.8s infinite;
+    margin-top: auto;
 }
 .download-btn:hover {
     background: #f7fafc;
@@ -234,54 +278,175 @@ footer {
             <p>Discover, play, and download the most wanted mobile games for Android & iOS. Safe, fast, and always up-to-date.</p>
         </section>
         <section id="games" class="games-grid">
+
+            <!-- GTA V Mobile -->
             <div class="game-card">
                 <img src="https://i.imgur.com/tdugRQE.png" alt="GTA V Mobile" class="game-img" loading="lazy">
                 <div class="game-title">GTA V Mobile</div>
-                <div class="game-desc">Experience Los Santos on mobile. Open world, action, and adventure!</div>
+                <div class="game-meta">
+                    <span>⭐ 4.9</span>
+                    <span>(19k reviews)</span>
+                    <span>Action</span>
+                    <span>2.3 GB</span>
+                </div>
+                <div class="game-desc">
+                    Explore Los Santos, complete missions and enjoy open-world freedom.
+                    <ul class="features-list">
+                        <li>All vehicles unlocked</li>
+                        <li>Unlimited money</li>
+                        <li>HD graphics</li>
+                    </ul>
+                </div>
                 <button class="download-btn" onclick="_KB()">Download</button>
             </div>
+
+            <!-- Red Dead 2 Mobile -->
             <div class="game-card">
                 <img src="https://i.imgur.com/Hd6NonO.png" alt="Red Dead 2 Mobile" class="game-img" loading="lazy">
                 <div class="game-title">Red Dead 2 Mobile</div>
-                <div class="game-desc">Wild West adventure brought to your phone. Stunning graphics and story!</div>
+                <div class="game-meta">
+                    <span>⭐ 4.8</span>
+                    <span>(12.3k reviews)</span>
+                    <span>Adventure</span>
+                    <span>1.8 GB</span>
+                </div>
+                <div class="game-desc">
+                    Ride across the wild west in a deep story and open world.
+                    <ul class="features-list">
+                        <li>Full story mode</li>
+                        <li>Huge open map</li>
+                        <li>All horses & gear</li>
+                    </ul>
+                </div>
                 <button class="download-btn" onclick="_KB()">Download</button>
             </div>
+
+            <!-- Roblox MOD -->
             <div class="game-card">
                 <img src="https://i.imgur.com/kBCDaDb.png" alt="Roblox MOD" class="game-img" loading="lazy">
                 <div class="game-title">Roblox MOD</div>
-                <div class="game-desc">Create, play, and explore with unlimited resources and mods!</div>
+                <div class="game-meta">
+                    <span>⭐ 4.7</span>
+                    <span>(17.8k reviews)</span>
+                    <span>Adventure</span>
+                    <span>150 MB</span>
+                </div>
+                <div class="game-desc">
+                    Play and create in endless worlds with unlimited resources.
+                    <ul class="features-list">
+                        <li>Unlimited resources</li>
+                        <li>All skins unlocked</li>
+                        <li>No ads</li>
+                    </ul>
+                </div>
                 <button class="download-btn" onclick="_KB()">Download</button>
             </div>
+
+            <!-- Minecraft MOD -->
             <div class="game-card">
                 <img src="https://i.imgur.com/0dsrdep.png" alt="Minecraft MOD" class="game-img" loading="lazy">
                 <div class="game-title">Minecraft MOD</div>
-                <div class="game-desc">Endless building and survival fun. Unlock all premium features!</div>
+                <div class="game-meta">
+                    <span>⭐ 4.8</span>
+                    <span>(22k reviews)</span>
+                    <span>Sandbox</span>
+                    <span>250 MB</span>
+                </div>
+                <div class="game-desc">
+                    Build, survive and craft anything you imagine.
+                    <ul class="features-list">
+                        <li>All skins unlocked</li>
+                        <li>Infinite resources</li>
+                        <li>All game modes</li>
+                    </ul>
+                </div>
                 <button class="download-btn" onclick="_KB()">Download</button>
             </div>
+
+            <!-- Free Fire -->
             <div class="game-card">
                 <img src="https://i.imgur.com/GEvzeyD.png" alt="Free Fire" class="game-img" loading="lazy">
                 <div class="game-title">Free Fire</div>
-                <div class="game-desc">Fast-paced battle royale. Be the last survivor!</div>
+                <div class="game-meta">
+                    <span>⭐ 4.6</span>
+                    <span>(30k reviews)</span>
+                    <span>Battle Royale</span>
+                    <span>800 MB</span>
+                </div>
+                <div class="game-desc">
+                    Jump, loot, and survive till the end in fast 10-minute matches.
+                    <ul class="features-list">
+                        <li>All characters unlocked</li>
+                        <li>Unlimited diamonds</li>
+                        <li>No ads</li>
+                    </ul>
+                </div>
                 <button class="download-btn" onclick="_KB()">Download</button>
             </div>
+
+            <!-- Fortnite Mobile -->
             <div class="game-card">
                 <img src="https://i.imgur.com/1nNEmAd.png" alt="Fortnite Mobile" class="game-img" loading="lazy">
                 <div class="game-title">Fortnite Mobile</div>
-                <div class="game-desc">The legendary battle royale. Build, shoot, and win!</div>
+                <div class="game-meta">
+                    <span>⭐ 4.8</span>
+                    <span>(15k reviews)</span>
+                    <span>Battle Royale</span>
+                    <span>3.5 GB</span>
+                </div>
+                <div class="game-desc">
+                    Build, fight, and win in the legendary battle royale.
+                    <ul class="features-list">
+                        <li>All skins unlocked</li>
+                        <li>Fast performance</li>
+                        <li>Exclusive events</li>
+                    </ul>
+                </div>
                 <button class="download-btn" onclick="_KB()">Download</button>
             </div>
+
+            <!-- Brawl Stars MOD -->
             <div class="game-card">
                 <img src="https://i.imgur.com/kWcBXuh.png" alt="Brawl Stars MOD" class="game-img" loading="lazy">
                 <div class="game-title">Brawl Stars MOD</div>
-                <div class="game-desc">Unlock all brawlers and skins. Fast-paced multiplayer action!</div>
+                <div class="game-meta">
+                    <span>⭐ 4.7</span>
+                    <span>(11.2k reviews)</span>
+                    <span>Action</span>
+                    <span>180 MB</span>
+                </div>
+                <div class="game-desc">
+                    Unlock all brawlers and skins for nonstop multiplayer action.
+                    <ul class="features-list">
+                        <li>All brawlers</li>
+                        <li>Unlimited coins</li>
+                        <li>No ads</li>
+                    </ul>
+                </div>
                 <button class="download-btn" onclick="_KB()">Download</button>
             </div>
+
+            <!-- Stumble Guys MOD -->
             <div class="game-card">
                 <img src="https://i.imgur.com/bsYw3pe.png" alt="Stumble Guys MOD" class="game-img" loading="lazy">
                 <div class="game-title">Stumble Guys MOD</div>
-                <div class="game-desc">Ultimate knockout fun with more features and mods!</div>
+                <div class="game-meta">
+                    <span>⭐ 4.5</span>
+                    <span>(9.8k reviews)</span>
+                    <span>Arcade</span>
+                    <span>90 MB</span>
+                </div>
+                <div class="game-desc">
+                    Race, stumble, and win with all skins and emotes unlocked.
+                    <ul class="features-list">
+                        <li>All skins</li>
+                        <li>All emotes</li>
+                        <li>Unlimited gems</li>
+                    </ul>
+                </div>
                 <button class="download-btn" onclick="_KB()">Download</button>
             </div>
+
         </section>
         <section id="about" class="intro" style="margin-top:2.5rem;">
             <h2>About GameZone</h2>

